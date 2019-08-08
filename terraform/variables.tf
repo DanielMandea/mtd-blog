@@ -39,5 +39,5 @@ variable "ibm_sl_username" {
 # Update this via environment variable within the DevOps pipeline
 # For more information, please see the README
 variable "vi_instance_name" {
-	default = "mtd-01"
+	default = "mtd-blog-01"
 }

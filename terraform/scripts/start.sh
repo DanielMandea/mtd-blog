@@ -2,5 +2,5 @@
 
 pkill swift
 cd .build/release
-./mtd
+./mtd-blog
 cd -

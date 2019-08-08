@@ -23,12 +23,12 @@ This application has been generated with the following capabilities and services
 
 
 ### Requirements
-* [Swift 4](https://swift.org/download/) 
+* [Swift 4](https://swift.org/download/)
 
 ### Run
 To build and run the application:
 1. `swift build`
-1. `.build/debug/mtd`
+1. `.build/debug/mtd-blog`
 
 #### Docker
 A description of the files related to Docker can be found in the [Docker files](#docker-files) setion. To build the two docker images, run the following commands from the root directory of the project:
@@ -40,11 +40,11 @@ To compile the application using the tools docker image, run:
 * `docker run -v $PWD:/swift-project -w /swift-project myapp-build /swift-utils/tools-utils.sh build release`
 
 To run the application:
-* `docker run -it -p 8080:8080 -v $PWD:/swift-project -w /swift-project myapp-run sh -c .build-ubuntu/release/mtd`
+* `docker run -it -p 8080:8080 -v $PWD:/swift-project -w /swift-project myapp-run sh -c .build-ubuntu/release/mtd-blog`
 
 
 #### Kubernetes
-To deploy your application to your Kubernetes cluster, run `helm install --name myapp .` in the `/chart/mtd` directory. You need to make sure you change the `repository` variable in your `chart/mtd/values.yaml` file points to the docker image containing your runnable application.
+To deploy your application to your Kubernetes cluster, run `helm install --name myapp .` in the `/chart/mtdblog` directory. You need to make sure you change the `repository` variable in your `chart/mtdblog/values.yaml` file points to the docker image containing your runnable application.
 
 ### Configuration
 Your application configuration information for any services is stored in the `localdev-config.json` file in the `config` directory. This file is in the `.gitignore` to prevent sensitive information from being stored in git. The connection information for any configured services that you would like to access when running locally, such as username, password and hostname, is stored in this file.
@@ -66,13 +66,6 @@ To use iterative development:
 You can deploy your application to IBM Cloud using:
 * the [CloudFoundry CLI](#cloudfoundry-cli)
 * an [IBM Cloud toolchain](#ibm-cloud-toolchain)
-
-## Pushing the application to IBM Cloud
-### Using the Deploy to IBM Cloud button
-Clicking on the button below deploys this starter application to the IBM Cloud. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application and configuration details. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
-
-
-[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/DanielMandea/mtd-blog.git)
 
 #### CloudFoundry CLI
 You can deploy the application using the IBM Cloud command-line:
@@ -120,4 +113,4 @@ The [`manifest.yml`](https://cloud.ibm.com/docs/cloud-foundry/deploy-apps.html#a
 All generated content is available for use and modification under the permissive MIT License (see `LICENSE` file), with the exception of SwaggerUI which is licensed under an Apache-2.0 license (see `NOTICES.txt` file).
 
 ### Generator
-This project was generated with [generator-swiftserver](https://github.com/IBM-Swift/generator-swiftserver) v5.13.0.
+This project was generated with [generator-swiftserver](https://github.com/IBM-Swift/generator-swiftserver) v5.14.0.
