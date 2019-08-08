@@ -1,8 +1,8 @@
 applications:
-- name: mtd-blog
+- name: mtd
   memory: 256M
   instances: 1
   random-route: true
   disk_quota: 1024M
-  command: "'mtd-blog'"
+  command: "'mtd'"
   buildpack: swift_buildpack

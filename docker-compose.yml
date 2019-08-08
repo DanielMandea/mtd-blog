@@ -1,7 +1,7 @@
 app:
-    image: ibmcom/swift-ubuntu:5.0.2
-    ports:
-        - "8080:8080"
-    volumes:
-        - .:/mtd-blog
-    command: bash -c "cd /mtd-blog && swift package --build-path .build-ubuntu clean && swift build --build-path .build-ubuntu && swift test --build-path .build-ubuntu"
+  image: ibmcom/swift-ubuntu:3.1.1
+  ports:
+    - "8080:8080"
+  volumes:
+    - .:/root/mtd
+  command: bash -c "cd /root/mtd && swift package clean && swift build && swift test && ./.build/debug/mtd"
