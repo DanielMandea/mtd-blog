@@ -1,0 +1,3 @@
+.build/							usr/src/mtd
+terraform/scripts/install.sh	usr/src/mtd
+terraform/scripts/start.sh		usr/src/mtd

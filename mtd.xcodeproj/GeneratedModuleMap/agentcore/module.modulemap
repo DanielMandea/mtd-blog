@@ -1,0 +1,4 @@
+module agentcore {
+    umbrella "/Users/daniel.mandea@ro.ibm.com/Developer/mtd/mtd/.build/checkouts/omr-agentcore/src/agentcore/include"
+    export *
+}
