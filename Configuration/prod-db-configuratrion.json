@@ -1,0 +1,8 @@
+{
+    "host": "localhost",
+    "port": 443,
+    "secured": false,
+    "username": "some",
+    "password": "some"
+}
+

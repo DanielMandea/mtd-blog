@@ -1,4 +1,4 @@
 module hcapiplugin {
-    umbrella "/Users/daniel.mandea@ro.ibm.com/Desktop/mtd-blog/.build/checkouts/omr-agentcore/src/hcapiplugin/include"
+    umbrella "/Users/daniel.mandea@ro.ibm.com/Developer/mtd/mtd-blog/.build/checkouts/omr-agentcore/src/hcapiplugin/include"
     export *
 }

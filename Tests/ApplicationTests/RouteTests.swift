@@ -6,6 +6,7 @@ import HeliumLogger
 import LoggerAPI
 
 @testable import Application
+@testable import mtd-blog
 
 class RouteTests: XCTestCase {
     static var port: Int!
@@ -18,20 +19,6 @@ class RouteTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        HeliumLogger.use()
-        do {
-            print("------------------------------")
-            print("------------New Test----------")
-            print("------------------------------")
-
-            let app = try App()
-            RouteTests.port = app.cloudEnv.port
-            try app.postInit()
-            Kitura.addHTTPServer(onPort: RouteTests.port, with: app.router)
-            Kitura.start()
-        } catch {
-            XCTFail("Couldn't start Application test server: \(error)")
-        }
     }
 
     override func tearDown() {

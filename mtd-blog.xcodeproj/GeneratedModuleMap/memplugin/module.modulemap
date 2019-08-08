@@ -1,4 +1,4 @@
 module memplugin {
-    umbrella "/Users/daniel.mandea@ro.ibm.com/Desktop/mtd-blog/.build/checkouts/omr-agentcore/src/memplugin/include"
+    umbrella "/Users/daniel.mandea@ro.ibm.com/Developer/mtd/mtd-blog/.build/checkouts/omr-agentcore/src/memplugin/include"
     export *
 }
