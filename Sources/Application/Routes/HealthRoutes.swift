@@ -31,7 +31,7 @@ public class HealthRouts {
 // MARK: RoutsCompose
 
 extension HealthRouts: RoutsCompose {
-    public func coposeRouts(with database: Database) {
+    public func coposeRouts(with database: Database?) {
         // Basic application health check
         router.get(Constants.HealthRouts.health, handler: getHealthCheck)
     }

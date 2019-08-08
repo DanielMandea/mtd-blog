@@ -46,7 +46,7 @@ public class WebRouts {
 
 extension WebRouts: RoutsCompose {
     
-    public func coposeRouts(with database: Database) {
+    public func coposeRouts(with database: Database?) {
         router.setDefault(templateEngine: StencilTemplateEngine())
         router.all(Constants.BlogRouts.publicPath, middleware: StaticFileServer())
         router.get(Constants.BlogRouts.indexPath, handler: index)

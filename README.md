@@ -67,6 +67,13 @@ You can deploy your application to IBM Cloud using:
 * the [CloudFoundry CLI](#cloudfoundry-cli)
 * an [IBM Cloud toolchain](#ibm-cloud-toolchain)
 
+## Pushing the application to IBM Cloud
+### Using the Deploy to IBM Cloud button
+Clicking on the button below deploys this starter application to the IBM Cloud. The `manifest.yml` file [included in the repo] is parsed to obtain the name of the application and configuration details. For further details on the structure of the `manifest.yml` file, see the [Cloud Foundry documentation](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest.html#minimal-manifest).
+
+
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/DanielMandea/mtd-blog.git)
+
 #### CloudFoundry CLI
 You can deploy the application using the IBM Cloud command-line:
 1. Install the [IBM Cloud CLI](https://cloud.ibm.com/docs/cli/index.html)

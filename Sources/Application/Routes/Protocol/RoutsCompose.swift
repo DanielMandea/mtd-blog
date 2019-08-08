@@ -9,5 +9,5 @@ import Foundation
 import CouchDB
 
 public protocol RoutsCompose {
-    func coposeRouts(with database: Database)
+    func coposeRouts(with database: Database?)
 }

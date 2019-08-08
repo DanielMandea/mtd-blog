@@ -11,5 +11,5 @@ import CouchDB
 import Application
 
 public protocol RoutsConnection {
-    func connectRouts(for database: Database)
+    func connectRouts(for database: Database?)
 }

@@ -27,7 +27,7 @@ struct DefaultRoutesConnection {
 // MARK: - RoutesConnection
 
 extension DefaultRoutesConnection: RoutsConnection {
-    func connectRouts(for database: Database) {
+    func connectRouts(for database: Database?) {
         for route in  routes { route.coposeRouts(with: database) }
     }
 }
