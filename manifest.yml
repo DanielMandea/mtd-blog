@@ -4,8 +4,5 @@ applications:
   instances: 1
   random-route: true
   disk_quota: 1024M
-  command: mtd-blog
-  buildpacks:
-    - swift_buildpack
-  #health-check-type: http
-  #health-check-http-endpoint: /health
+  command: "'mtd-blog'"
+  buildpack: swift_buildpack
