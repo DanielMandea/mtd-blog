@@ -10,10 +10,10 @@ import CouchDB
 
 struct Configuration {
     static var environment: Environment {
-        #if os(macOS)
+//        #if os(macOS)
         return .dev
-        #elseif os(Linux)
-        return .production
-        #endif
+//        #elseif os(Linux)
+//        return .production
+//        #endif
     }
 }
