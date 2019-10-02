@@ -19,7 +19,21 @@ struct Constants {
         static let blogEntry: String = "blog/:name"
     }
     
+    struct EditRouts {
+        static let posts: String = "posts"
+    }
+    
+    struct Markdown {
+        static let index = "docs"
+        static let any = "docs/*"
+    }
+    
     struct HealthRouts {
         static let health: String = "health"
+    }
+    
+    struct Error {
+        static let invalidResponse = NSError(domain: "MTD", code: 2, userInfo: ["error":"Invalid response"])
+        static let unknown = NSError(domain: "MTD", code: 2, userInfo: ["error":"Unknown"])
     }
 }
