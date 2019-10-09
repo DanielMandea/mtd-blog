@@ -1,4 +1,4 @@
-# Swift UI And Combine 
+# Swift UI And Combine Index 
 
 Download [Starter Project](#requirements)
 

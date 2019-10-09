@@ -30,18 +30,16 @@ public class App {
     }
 
     public func run() throws {
-//        connection.create { [weak self] result in
-//            switch result {
-//            case .failure(let error):
-//                print(error)
-//            case .success(let database):
-//                self?.routs.connectRouts(for: database)
-//            }
-//        }
-        routs.connectRouts(for: nil)
+        connection.create { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let database):
+                self?.routs.connectRouts(for: database)
+            }
+        }
         Kitura.addHTTPServer(onPort: self.cloudEnv.port, with: self.router)
         Kitura.run()
-        
     }
 }
 

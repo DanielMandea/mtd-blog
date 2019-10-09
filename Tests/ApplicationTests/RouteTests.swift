@@ -6,7 +6,7 @@ import HeliumLogger
 import LoggerAPI
 
 @testable import Application
-@testable import mtd-blog
+@testable import mtd_blog
 
 class RouteTests: XCTestCase {
     static var port: Int!

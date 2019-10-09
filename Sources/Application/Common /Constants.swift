@@ -21,6 +21,7 @@ struct Constants {
     
     struct EditRouts {
         static let posts: String = "posts"
+        static let post: String = "post"
     }
     
     struct Markdown {

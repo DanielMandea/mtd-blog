@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import mtd-blog
+@testable import mtd_blog
 @testable import Application
 
 class CoachDBConnectionTests: XCTestCase {
@@ -14,7 +14,7 @@ class CoachDBConnectionTests: XCTestCase {
     var sut: DefaultCouchDBConnection!
 
     override func setUp() {
-        sut = DefaultCouchDBConnection(dbName: "some-db")
+//        sut = DefaultCouchDBConnection(dbName: "some-db", properties: <#ConnectionProperties#>)
     }
 
     override func tearDown() {

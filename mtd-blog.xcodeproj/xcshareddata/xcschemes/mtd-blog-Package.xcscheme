@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "mtd-blog::Application"
-               BuildableName = "Application.framework"
-               BlueprintName = "Application"
+               BlueprintIdentifier = "mtd-blog::mtd-blog"
+               BuildableName = "mtd-blog"
+               BlueprintName = "mtd-blog"
                ReferencedContainer = "container:mtd-blog.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "mtd-blog::mtd-blog"
-               BuildableName = "mtd-blog"
-               BlueprintName = "mtd-blog"
+               BlueprintIdentifier = "mtd-blog::Application"
+               BuildableName = "Application.framework"
+               BlueprintName = "Application"
                ReferencedContainer = "container:mtd-blog.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

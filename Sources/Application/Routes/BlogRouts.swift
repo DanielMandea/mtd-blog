@@ -11,6 +11,8 @@ import LoggerAPI
 import KituraStencil
 import Configuration
 import CouchDB
+import KituraMarkdown
+import MTDBlogComponents
 
 public class BlogRouts {
     
@@ -23,16 +25,21 @@ public class BlogRouts {
     
     public init(router: Router) {
         self.router = router
+        self.router.add(templateEngine: KituraMarkdown())
+        self.router.setDefault(templateEngine: KituraMarkdown())
     }
     
-    // MARK: - Routs 
+    // MARK: - Routs
+    
+    func getBlogPosts(completion: @escaping ([BlogPostDocument]?, RequestError?) -> Void) {
+        database.fetch(with: completion)
+    }
     
     func blog(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) {
-        let url = URL(fileURLWithPath: ConfigurationManager.BasePath.pwd.path + "/posts.json")
-        let data = try! Data(contentsOf: url)
-        let blogPosts = try! JSONDecoder().decode(Array<BlogPost>.self, from: data)
-        do { try response.render(Constants.BlogRouts.blog, with: blogPosts, forKey: "posts") } catch { Log.debug(error.localizedDescription) }
-        next()
+        getBlogPosts { (blogPosts, error) in
+            do { try response.render(Constants.BlogRouts.blog, with: blogPosts, forKey: "posts") } catch { Log.debug(error.localizedDescription) }
+            next()
+        }
     }
     
     func blogEntry(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) {
@@ -51,13 +58,25 @@ public class BlogRouts {
             do { try response.redirect("/blog/\(trimmedName)", status: .movedPermanently) } catch { Log.debug(error.localizedDescription) }
             return next()
         }
-        guard let post = blogPosts.first(where: { $0.name == name }) else {
+        guard let post = blogPosts.first(where: { $0.title == name }) else {
             response.statusCode = .notFound
             return next()
         }
         
         do { try response.render("blog/\(name)", with: post, forKey: "post") } catch { Log.debug(error.localizedDescription) }
         next()
+    }
+    
+    func any(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) {
+        response.headers["Content-Type"] = "text/html"
+        do {try response.render(request.urlURL.path, context: [String:Any]())} catch {Log.debug(error.localizedDescription) }
+        do {try response.end()} catch {Log.debug(error.localizedDescription)}
+    }
+    
+    func index(request: RouterRequest, response: RouterResponse, next: @escaping () -> Void) {
+        response.headers["Content-Type"] = "text/html"
+        do { try response.render("/docs/index.md", context: [String:Any]())} catch {Log.debug(error.localizedDescription)}
+        do {try response.status(.OK).end()} catch {Log.debug(error.localizedDescription)}
     }
 }
 
@@ -71,5 +90,7 @@ extension BlogRouts: RoutsCompose {
         router.all(Constants.BlogRouts.publicPath, middleware: StaticFileServer())
         router.get(Constants.BlogRouts.blog, handler: blog)
         router.get(Constants.BlogRouts.blogEntry, handler: blogEntry)
+        router.get(Constants.Markdown.index, handler: index)
+        router.get(Constants.Markdown.any, handler: any)
     }
 }

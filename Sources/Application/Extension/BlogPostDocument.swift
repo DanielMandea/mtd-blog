@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import CouchDB
+import MTDBlogComponents
+
+class BlogPostDocument: BlogPost, Document {
+    var _id: String?
+    var _rev: String?
+}
