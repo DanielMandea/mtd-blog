@@ -1,0 +1,17 @@
+version: "3"
+services:
+  app:
+    image: mtd-blog-run
+    depends_on: 
+      - Cloudant-r4
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/root/project
+    command: "sh -c 'sleep 15 && .build-ubuntu/release/mtd-blog'"
+    working_dir: "/root/project"  
+  Cloudant-r4:
+    image: couchdb
+    environment:
+      - COUCHDB_USER=1e58d8f8-537c-4918-af59-07ce08ab341c-bluemix
+      - COUCHDB_PASSWORD=89f74b512f78a68ffde762d192cd007e026eb47aea238f709bd3042751d012e5

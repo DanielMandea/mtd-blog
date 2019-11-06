@@ -12,7 +12,7 @@ struct Constants {
     struct DbConfiguration {
         static let devConfiguration: String = "dev-db-configuration.json"
         static let prodConfiguration: String = "prod-db-configuration.json"
-        static let dbName: String = "mtd-blog-db-live4"
+        static let dbName: String = "mtd-blog-db-live2"
     }
     
     struct Errors {

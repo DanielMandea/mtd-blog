@@ -13,7 +13,6 @@ import Configuration
 import CouchDB
 import MTDBlogComponents
 import KituraContracts
-import BluemixObjectStorage
 
 public class EditRouts {
     

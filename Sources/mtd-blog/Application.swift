@@ -7,6 +7,7 @@ import KituraContracts
 import Health
 import Application
 import CouchDB
+import KituraOpenAPI
 
 public let projectPath = ConfigurationManager.BasePath.project.path
 
@@ -31,12 +32,14 @@ public class App {
 
     public func run() throws {
         connection.create { [weak self] result in
+            guard let `self` = self else {return}
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let database):
-                self?.routs.connectRouts(for: database)
+                self.routs.connectRouts(for: database)
             }
+            KituraOpenAPI.addEndpoints(to: self.router)
         }
         Kitura.addHTTPServer(onPort: self.cloudEnv.port, with: self.router)
         Kitura.run()

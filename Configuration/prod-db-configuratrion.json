@@ -1,8 +1,8 @@
 {
-    "host": "localhost",
+    "host": "1e58d8f8-537c-4918-af59-07ce08ab341c-bluemix.cloudant.com",
     "port": 443,
     "secured": false,
-    "username": "some",
-    "password": "some"
+    "username": "1e58d8f8-537c-4918-af59-07ce08ab341c-bluemix",
+    "password": "89f74b512f78a68ffde762d192cd007e026eb47aea238f709bd3042751d012e5"
 }
 

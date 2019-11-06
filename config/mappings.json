@@ -1,0 +1,9 @@
+{
+    "Cloudant-r4": {
+        "searchPatterns": [
+            "cloudfoundry:cloudant",
+            "env:kube-cloudant-credentials",
+            "file:config/cloudant-credentials.json"
+        ]
+    }
+}

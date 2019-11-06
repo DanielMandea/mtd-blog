@@ -11,33 +11,6 @@
         }
       },
       {
-        "package": "BluemixObjectStorage",
-        "repositoryURL": "https://github.com/DanielMandea/bluemix-objectstorage-serversdk-swift.git",
-        "state": {
-          "branch": "master",
-          "revision": "003c771d717d35fb59aec82c84793cb3d599fcca",
-          "version": null
-        }
-      },
-      {
-        "package": "SimpleHttpClient",
-        "repositoryURL": "https://github.com/ibm-bluemix-mobile-services/bluemix-simple-http-client-swift.git",
-        "state": {
-          "branch": null,
-          "revision": "e5b6ce424f1ff8bc78eee0fae382ac7f1f8ca843",
-          "version": "1.0.0"
-        }
-      },
-      {
-        "package": "SimpleLogger",
-        "repositoryURL": "https://github.com/ibm-bluemix-mobile-services/bluemix-simple-logger-swift.git",
-        "state": {
-          "branch": null,
-          "revision": "4e3882aebabee30933a23944d48c084bb7c5e31d",
-          "version": "0.6.0"
-        }
-      },
-      {
         "package": "Socket",
         "repositoryURL": "https://github.com/IBM-Swift/BlueSocket.git",
         "state": {
